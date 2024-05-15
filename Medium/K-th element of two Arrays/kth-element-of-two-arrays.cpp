@@ -8,36 +8,19 @@ class Solution{
     public:
     int kthElement(int arr1[], int arr2[], int n, int m, int k)
     {
-        // int i=0,j=0;
-        // vector<int> ans;
-        // while(i<n && j<n)
-        // {
-        //     if(arr1[i]<=arr2[j])
-        //     {
-        //         ans.push_back(arr1[i]);
-        //         i++;
-        //     }
-        //     else{
-        //         ans.push_back(arr2[j]);
-        //         j++;
-        //     }
-        // }
-        // int answer=ans[k-1];
-        // return answer;
-        
-        vector<int> ans;
-        for(int i=0;i<n;i++)
-        {
-            ans.push_back(arr1[i]);
+        vector<int> arr;
+        int i=0;
+        while(i<n){
+            arr.push_back(arr1[i]);
+            i++;
         }
-        for(int i=0;i<m;i++)
-        {
-            ans.push_back(arr2[i]);
+        i=0;
+        while(i<m){
+            arr.push_back(arr2[i]);
+            i++;
         }
-        sort(ans.begin(),ans.end());
-        
-        int sol=ans[k-1];
-        return sol;
+        sort(arr.begin(),arr.end());
+        return arr[k-1];
     }
 };
 
